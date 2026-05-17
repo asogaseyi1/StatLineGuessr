@@ -25,21 +25,21 @@ public class DataSeeder implements CommandLineRunner {
     public void run(String... args) {
         if (playerRepository.count() > 0) return;
 
-        Player lebron   = playerRepository.save(new Player(null, "LeBron James",              "NBA", "Los Angeles Lakers",   "SF"));
-        Player durant   = playerRepository.save(new Player(null, "Kevin Durant",               "NBA", "Phoenix Suns",         "SF"));
-        Player curry    = playerRepository.save(new Player(null, "Stephen Curry",              "NBA", "Golden State Warriors","PG"));
-        Player giannis  = playerRepository.save(new Player(null, "Giannis Antetokounmpo",      "NBA", "Milwaukee Bucks",      "PF"));
-        Player harden   = playerRepository.save(new Player(null, "James Harden",               "NBA", "Los Angeles Clippers", "PG"));
-        Player jokic    = playerRepository.save(new Player(null, "Nikola Jokic",               "NBA", "Denver Nuggets",       "C"));
-        Player embiid   = playerRepository.save(new Player(null, "Joel Embiid",                "NBA", "Philadelphia 76ers",   "C"));
-        Player luka     = playerRepository.save(new Player(null, "Luka Doncic",                "NBA", "Dallas Mavericks",     "PG"));
-        Player tatum    = playerRepository.save(new Player(null, "Jayson Tatum",               "NBA", "Boston Celtics",       "SF"));
-        Player booker   = playerRepository.save(new Player(null, "Devin Booker",               "NBA", "Phoenix Suns",         "SG"));
-        Player lillard  = playerRepository.save(new Player(null, "Damian Lillard",             "NBA", "Milwaukee Bucks",      "PG"));
-        Player butler   = playerRepository.save(new Player(null, "Jimmy Butler",               "NBA", "Miami Heat",           "SF"));
-        Player kawhi    = playerRepository.save(new Player(null, "Kawhi Leonard",              "NBA", "Los Angeles Clippers", "SF"));
-        Player pg13     = playerRepository.save(new Player(null, "Paul George",                "NBA", "Philadelphia 76ers",   "SG"));
-        Player ad       = playerRepository.save(new Player(null, "Anthony Davis",              "NBA", "Los Angeles Lakers",   "C"));
+        Player lebron   = playerRepository.save(new Player("LeBron James",              "NBA", "Los Angeles Lakers",   "SF"));
+        Player durant   = playerRepository.save(new Player("Kevin Durant",               "NBA", "Phoenix Suns",         "SF"));
+        Player curry    = playerRepository.save(new Player("Stephen Curry",              "NBA", "Golden State Warriors","PG"));
+        Player giannis  = playerRepository.save(new Player("Giannis Antetokounmpo",      "NBA", "Milwaukee Bucks",      "PF"));
+        Player harden   = playerRepository.save(new Player("James Harden",               "NBA", "Los Angeles Clippers", "PG"));
+        Player jokic    = playerRepository.save(new Player("Nikola Jokic",               "NBA", "Denver Nuggets",       "C"));
+        Player embiid   = playerRepository.save(new Player("Joel Embiid",                "NBA", "Philadelphia 76ers",   "C"));
+        Player luka     = playerRepository.save(new Player("Luka Doncic",                "NBA", "Dallas Mavericks",     "PG"));
+        Player tatum    = playerRepository.save(new Player("Jayson Tatum",               "NBA", "Boston Celtics",       "SF"));
+        Player booker   = playerRepository.save(new Player("Devin Booker",               "NBA", "Phoenix Suns",         "SG"));
+        Player lillard  = playerRepository.save(new Player("Damian Lillard",             "NBA", "Milwaukee Bucks",      "PG"));
+        Player butler   = playerRepository.save(new Player("Jimmy Butler",               "NBA", "Miami Heat",           "SF"));
+        Player kawhi    = playerRepository.save(new Player("Kawhi Leonard",              "NBA", "Los Angeles Clippers", "SF"));
+        Player pg13     = playerRepository.save(new Player("Paul George",                "NBA", "Philadelphia 76ers",   "SG"));
+        Player ad       = playerRepository.save(new Player("Anthony Davis",              "NBA", "Los Angeles Lakers",   "C"));
 
         List<Statline> statlines = List.of(
                 // LeBron James

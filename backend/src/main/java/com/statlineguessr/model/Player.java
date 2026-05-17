@@ -1,15 +1,9 @@
 package com.statlineguessr.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "player")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,4 +20,25 @@ public class Player {
 
     @Column(length = 50)
     private String position;
+
+    public Player() {}
+
+    public Player(String name, String sport, String team, String position) {
+        this.name = name;
+        this.sport = sport;
+        this.team = team;
+        this.position = position;
+    }
+
+    public Long getId() { return id; }
+    public String getName() { return name; }
+    public String getSport() { return sport; }
+    public String getTeam() { return team; }
+    public String getPosition() { return position; }
+
+    public void setId(Long id) { this.id = id; }
+    public void setName(String name) { this.name = name; }
+    public void setSport(String sport) { this.sport = sport; }
+    public void setTeam(String team) { this.team = team; }
+    public void setPosition(String position) { this.position = position; }
 }

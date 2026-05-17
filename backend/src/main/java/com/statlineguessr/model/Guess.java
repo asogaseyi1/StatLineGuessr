@@ -1,15 +1,11 @@
 package com.statlineguessr.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "guess")
-@Data
-@NoArgsConstructor
 public class Guess {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,10 +27,7 @@ public class Guess {
     @Column(name = "guessed_at")
     private LocalDateTime guessedAt;
 
-    @PrePersist
-    protected void onCreate() {
-        guessedAt = LocalDateTime.now();
-    }
+    public Guess() {}
 
     public Guess(Statline statline, String guessedPlayerName, boolean correct, int hintsUsed) {
         this.statline = statline;
@@ -42,4 +35,23 @@ public class Guess {
         this.correct = correct;
         this.hintsUsed = hintsUsed;
     }
+
+    @PrePersist
+    protected void onCreate() {
+        guessedAt = LocalDateTime.now();
+    }
+
+    public Long getId() { return id; }
+    public Statline getStatline() { return statline; }
+    public String getGuessedPlayerName() { return guessedPlayerName; }
+    public boolean isCorrect() { return correct; }
+    public int getHintsUsed() { return hintsUsed; }
+    public LocalDateTime getGuessedAt() { return guessedAt; }
+
+    public void setId(Long id) { this.id = id; }
+    public void setStatline(Statline statline) { this.statline = statline; }
+    public void setGuessedPlayerName(String guessedPlayerName) { this.guessedPlayerName = guessedPlayerName; }
+    public void setCorrect(boolean correct) { this.correct = correct; }
+    public void setHintsUsed(int hintsUsed) { this.hintsUsed = hintsUsed; }
+    public void setGuessedAt(LocalDateTime guessedAt) { this.guessedAt = guessedAt; }
 }
