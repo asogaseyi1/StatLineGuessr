@@ -43,7 +43,7 @@ export default function GamePage() {
       if (!s) setError('No stat lines available. Make sure the backend is running and seeded.');
       else setStatline(s);
     } catch {
-      setError('Could not connect to the server. Is the backend running on port 8080?');
+      setError('Could not connect to the server. Please try again later.');
     } finally {
       setLoading(false);
     }
