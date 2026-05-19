@@ -1,6 +1,6 @@
 import type { GuessResult, Player, StatlineGameView } from '../types';
 
-const BASE = 'http://localhost:8080/api';
+const BASE = (import.meta.env.VITE_API_URL ?? 'http://localhost:8080') + '/api';
 
 export async function fetchRandomStatline(): Promise<StatlineGameView | null> {
   const res = await fetch(`${BASE}/game/random`);
